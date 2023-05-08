@@ -87,7 +87,7 @@ function groupDates(dates) {
 }
 
 export function getVideoURL(group, sequenceName, filename) {
-    return ['/TeslaCam', group, sequenceName, filename].join('/');
+    return ['/videos', group, sequenceName, filename].join('/');
 }
 
 function parseMp4Filename(filename) {

@@ -8,7 +8,7 @@ async function before(app, server, compiler) {
         res.setHeader('Content-Type', 'text/plain');
         res.sendFile(path.resolve(__dirname, 'mock/videolist.txt'));
     });
-    app.get('/TeslaCam/a/b/:file', function (req, res) {
+    app.get('/videos/a/b/:file', function (req, res) {
         console.log(req.params.file);
         res.setHeader('Content-Type', 'video/mp4');
         res.sendFile(path.resolve(__dirname, 'mock/videos', req.params.file));
@@ -25,7 +25,7 @@ module.exports = {
             '/*.txt': { target: proxyTarget },
             '/*.log': { target: proxyTarget },
             '/cgi-bin/': { target: proxyTarget },
-            '/TeslaCam/': { target: proxyTarget }
+            '/videos/': { target: proxyTarget }
         },
         // disableHostCheck: true,
         // host: '0.0.0.0',

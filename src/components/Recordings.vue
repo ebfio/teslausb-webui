@@ -3,7 +3,7 @@
         <div class="loading" v-if="loading">
             <VeuiLoading loading ui="vertical l strong" />
         </div>
-        <iframe src="/TeslaCam/" @load="handleFrameLoad"></iframe>
+        <iframe src="/videos/" @load="handleFrameLoad"></iframe>
     </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
         handleFrameLoad({target: iframe}) {
             this.loading = false;
 
-            if (iframe.contentWindow.location.pathname === '/TeslaCam/') {
+            if (iframe.contentWindow.location.pathname === '/videos/') {
                 setTimeout(() => {
                     const doc = iframe.contentDocument;
                     const link = doc.querySelector('#list tbody tr');
